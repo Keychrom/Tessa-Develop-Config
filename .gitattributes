@@ -1,0 +1,2 @@
+# These are Linux dotfiles; keep LF endings on every checkout.
+* text=auto eol=lf
