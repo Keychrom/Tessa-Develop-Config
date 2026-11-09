@@ -14,7 +14,7 @@ Fcitx5/Mozc、セッション環境）を再現できます。
 | --- | --- |
 | `tessa/config` | 実際に使っている Tessa 設定。統合コントロールセンター、レイアウト、ウィンドウルール、バー、テーマロール、入力、XWayland、キーバインド |
 | `kitty/kitty.conf` | Vermilion Ink パレット、JetBrains Mono Nerd Font、powerline タブ、日本語 CJK フォールバックを含む Kitty 設定 |
-| `starship.toml` | ホスト名、ディレクトリ、Git、各言語モジュールを表示する Starship プロンプト |
+| `starship.toml` | ホスト名、ディレクトリ、Git、各言語モジュールを表示する Starship プロンプト。[Hayao0819/dotfiles](https://github.com/Hayao0819/dotfiles/tree/master) から流用 |
 | `fcitx5/config` | Fcitx5 の動作設定 |
 | `fcitx5/profile` | JP キーボードレイアウトと Mozc を既定入力メソッドにした設定 |
 | `fcitx5/conf/classicui.conf` | `TessaInk` テーマと Inter フォントを使う候補ウィンドウ設定 |
@@ -76,6 +76,12 @@ Fcitx5 とセッション環境を反映するため、ログアウトして再�
   個別ポップオーバーに戻す場合は `panel_style = classic` に変更します。
 - Kitty は Nerd Font のグリフを多用します。タブやアイコンが崩れる場合は
   Nerd Font 対応フォントをインストールしてください。
+
+## クレジット
+
+- `starship.toml` は
+  [Hayao0819/dotfiles](https://github.com/Hayao0819/dotfiles/tree/master)
+  から流用しています。最新の内容と利用条件は上流リポジトリを確認してください。
 
 ## 関連リンク
 

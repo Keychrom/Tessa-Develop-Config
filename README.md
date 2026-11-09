@@ -14,7 +14,7 @@ personal input-method data are intentionally excluded.
 | --- | --- |
 | `tessa/config` | Live Tessa config: unified control center, layouts, window rules, bar, theme roles, input, XWayland, and bindings |
 | `kitty/kitty.conf` | Kitty terminal with the Vermilion Ink palette, JetBrains Mono Nerd Font, powerline tabs, and Japanese CJK fallback |
-| `starship.toml` | Starship prompt with host, directory, Git, and language modules |
+| `starship.toml` | Starship prompt with host, directory, Git, and language modules, adapted from [Hayao0819/dotfiles](https://github.com/Hayao0819/dotfiles/tree/master) |
 | `fcitx5/config` | Fcitx5 behavior settings |
 | `fcitx5/profile` | Japanese keyboard layout with Mozc as the default input method |
 | `fcitx5/conf/classicui.conf` | Fcitx5 candidate window using the `TessaInk` theme and Inter font |
@@ -75,6 +75,12 @@ keybindings are tuned for this development machine.
   Change `panel_style = classic` for separate popovers.
 - Kitty contains a Nerd Font glyph-based UI. Install a Nerd Font variant if the
   tab bar or icons render incorrectly.
+
+## Credits
+
+- `starship.toml` is adapted from
+  [Hayao0819/dotfiles](https://github.com/Hayao0819/dotfiles/tree/master).
+  See the upstream repository for its current contents and terms.
 
 ## Related
 
