@@ -1,5 +1,6 @@
 # Tessa - Vermilion Ink
-# A quiet, ink-washed desktop with vermilion accents.
+# Compositor and shared theme settings.
+# Panel settings live in ~/.config/tessa/panel.conf.
 # Reload with Super+R or `tessa-ctl dispatch reload`.
 
 terminal = kitty
@@ -75,34 +76,8 @@ bind = SUPER+ALT+t special tools
 bind = SUPER+ALT+SHIFT+t move-to-special tools
 
 # Shell / panel --------------------------------------------------------------
+# The compositor starts the panel; panel-only settings live in panel.conf.
 panel = true
-# Unified control center; change to classic for separate popovers
-panel_style = unified
-control_features = all
-bar_height = 46
-bar_top_margin = 14
-bar_side_margin = 18
-bar_layout = logo,workspaces,chips,clock,battery,network,volume,stats,media,tray,status
-bar-font = Inter
-launcher-font = Inter
-popover-font = Inter
-toast-font = Inter
-bar-fg = #f0eadf
-launcher-fg = #f3ede3
-popover-fg = #f3ede3
-toast-fg = #f3ede3
-bar-bg = #0b111b
-launcher-bg = #0a101a
-popover-bg = #0a101a
-toast-bg = #101826
-panel_bg = #0b111b
-panel_fg = #f0eadf
-
-wallpaper_image = ~/Pictures/Wallpapers/vermilion-ink.png
-wallpaper_fit = cover
-wallpaper_art = false
-bg_top = #101827
-bg_bottom = #04060b
 
 layer-rule = namespace=tessa-background; opacity=1; corner-radius=0; blur=false
 layer-rule = namespace=tessa-bar; opacity=0.93; corner-radius=16; blur=true
@@ -130,7 +105,6 @@ cursor_theme = Adwaita
 cursor_size = 26
 
 # Applications ---------------------------------------------------------------
-screenshot_dir = ~/Pictures/Screenshots
 xwayland = true
 xwayland_display = auto
 xim = true
@@ -139,18 +113,13 @@ xim_server = fcitx
 # DISPLAY are ready, so fcitx5 serves text-input-v3 and XIM at once.
 xim_start = fcitx5 -d --replace
 
-launcher_entry = Terminal | kitty
-launcher_entry = Browser | firefox
-launcher_entry = System Info | kitty --hold -e fastfetch
-launcher_entry = Fcitx5 Settings | fcitx5-configtool
-launcher_entry = Tessa Config | kitty -e sh -c '${EDITOR:-vi} ~/.config/tessa/config'
-
 # Palette --------------------------------------------------------------------
 accent = #e2684f
 bg = #070a12
+bg_top = #101827
+bg_bottom = #04060b
 border_active = #e2684f
 border_inactive = #26313f
-font = Inter
 theme-role = accent = #e2684f
 theme-role = window.border.active = #e2684f
 theme-role = window.border.inactive = #26313f

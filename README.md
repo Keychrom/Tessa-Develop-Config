@@ -12,7 +12,8 @@ personal input-method data are intentionally excluded.
 
 | Path | Purpose |
 | --- | --- |
-| `tessa/config` | Live Tessa config: unified control center, layouts, window rules, bar, theme roles, input, XWayland, and bindings |
+| `tessa/config` | Tessa compositor and shared theme: layouts, window rules, effects, input, XWayland, bindings, and palette |
+| `tessa/panel.conf` | Tessa Panel: unified control center, bar, launcher, popovers, wallpaper, and panel fonts/colors |
 | `kitty/kitty.conf` | Kitty terminal with the Vermilion Ink palette, JetBrains Mono Nerd Font, powerline tabs, and Japanese CJK fallback |
 | `starship.toml` | Starship prompt with host, directory, Git, and language modules, adapted from [Hayao0819/dotfiles](https://github.com/Hayao0819/dotfiles/tree/master) |
 | `fcitx5/config` | Fcitx5 behavior settings |
@@ -20,6 +21,11 @@ personal input-method data are intentionally excluded.
 | `fcitx5/conf/classicui.conf` | Fcitx5 candidate window using the `TessaInk` theme and Inter font |
 | `fcitx5/conf/notifications.conf` | Fcitx5 notification preferences |
 | `environment.d/90-fcitx5.conf` | GTK/Qt/SDL/XIM input-method environment for the Tessa session |
+
+Tessa reads `tessa/config`, then `tessa/panel.conf`, then
+`tessa/theme-colors.conf`. The split `panel.conf` requires a Tessa build from the
+current 0.2.5 development tree; older builds ignore it. Panel keys left in
+`config` still work for compatibility.
 
 ## Intentionally excluded
 
@@ -32,7 +38,7 @@ this repository:
 - `dconf/user` — binary desktop-settings database
 - Fcitx5 caches and temporary files such as `cached_layouts` and
   `notifications.conf_*`
-- `tessa/config.bak-*` — timestamped local backup
+- `tessa/*.bak-*` — timestamped local backups
 - Lock files, sockets, and other runtime state
 
 The full `~/.config` is about 55 MB. The safe subset here is only a few tens of
@@ -71,7 +77,7 @@ keybindings are tuned for this development machine.
   included.
 - Paths in the config use `~` or commands resolved from `PATH`; there is no
   hard-coded `/home/<user>` path.
-- `tessa/config` uses `panel_style = unified` and `control_features = all`.
+- `tessa/panel.conf` uses `panel_style = unified` and `control_features = all`.
   Change `panel_style = classic` for separate popovers.
 - Kitty contains a Nerd Font glyph-based UI. Install a Nerd Font variant if the
   tab bar or icons render incorrectly.
@@ -90,6 +96,6 @@ keybindings are tuned for this development machine.
 
 ## Status
 
-- Snapshot date: 2026-11-10
+- Snapshot date: 2026-11-11
 - Source: Arch Linux development machine (`Arch-Suiren`)
 - Tessa tree: 0.2.5 development, Zig 0.17 / wlroots 0.20 / scenefx 0.5

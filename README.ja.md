@@ -12,7 +12,8 @@ Fcitx5/Mozc、セッション環境）を再現できます。
 
 | パス | 内容 |
 | --- | --- |
-| `tessa/config` | 実際に使っている Tessa 設定。統合コントロールセンター、レイアウト、ウィンドウルール、バー、テーマロール、入力、XWayland、キーバインド |
+| `tessa/config` | Tessa コンポジタと共有テーマ。レイアウト、ウィンドウルール、エフェクト、入力、XWayland、キーバインド、パレット |
+| `tessa/panel.conf` | Tessa Panel。統合コントロールセンター、バー、ランチャー、ポップオーバー、壁紙、パネルのフォント/色 |
 | `kitty/kitty.conf` | Vermilion Ink パレット、JetBrains Mono Nerd Font、powerline タブ、日本語 CJK フォールバックを含む Kitty 設定 |
 | `starship.toml` | ホスト名、ディレクトリ、Git、各言語モジュールを表示する Starship プロンプト。[Hayao0819/dotfiles](https://github.com/Hayao0819/dotfiles/tree/master) から流用 |
 | `fcitx5/config` | Fcitx5 の動作設定 |
@@ -20,6 +21,10 @@ Fcitx5/Mozc、セッション環境）を再現できます。
 | `fcitx5/conf/classicui.conf` | `TessaInk` テーマと Inter フォントを使う候補ウィンドウ設定 |
 | `fcitx5/conf/notifications.conf` | Fcitx5 の通知設定 |
 | `environment.d/90-fcitx5.conf` | Tessa セッション向けの GTK/Qt/SDL/XIM 入力メソッド環境変数 |
+
+Tessa は `tessa/config`、`tessa/panel.conf`、`tessa/theme-colors.conf` の順に
+読みます。分割した `panel.conf` は現在の 0.2.5 開発ツリーの Tessa が必要です。
+古いビルドは無視します。`config` に残したパネルキーは互換性のため動作します。
 
 ## 意図的に除外したもの
 
@@ -32,7 +37,7 @@ Fcitx5/Mozc、セッション環境）を再現できます。
 - `dconf/user` — バイナリ形式のデスクトップ設定データベース
 - Fcitx5 のキャッシュと一時ファイル（`cached_layouts`、
   `notifications.conf_*` など）
-- `tessa/config.bak-*` — 日時付きのローカルバックアップ
+- `tessa/*.bak-*` — 日時付きのローカルバックアップ
 - ロックファイル、ソケット、その他の実行時状態
 
 元の `~/.config` は約 55 MB ありますが、ここに収録した安全な設定は数十 KB
@@ -72,7 +77,7 @@ Fcitx5 とセッション環境を反映するため、ログアウトして再�
   含まれていません。
 - 設定内のパスは `~` か `PATH` 上のコマンドで、`/home/<user>` のような
   固定パスは使っていません。
-- `tessa/config` は `panel_style = unified`、`control_features = all` です。
+- `tessa/panel.conf` は `panel_style = unified`、`control_features = all` です。
   個別ポップオーバーに戻す場合は `panel_style = classic` に変更します。
 - Kitty は Nerd Font のグリフを多用します。タブやアイコンが崩れる場合は
   Nerd Font 対応フォントをインストールしてください。
@@ -91,6 +96,6 @@ Fcitx5 とセッション環境を反映するため、ログアウトして再�
 
 ## 状態
 
-- スナップショット日: 2026-11-10
+- スナップショット日: 2026-11-11
 - 取得元: Arch Linux 開発機（`Arch-Suiren`）
 - Tessa: 0.2.5 開発ツリー、Zig 0.17 / wlroots 0.20 / scenefx 0.5
